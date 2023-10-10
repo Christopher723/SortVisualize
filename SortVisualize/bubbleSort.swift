@@ -10,7 +10,7 @@ import SwiftUI
 struct bubbleSort: View {
     @Binding  var randomArray: [Int]
     @Binding var isSorting: Bool
-    
+    @Binding var boolArray: [Bool]
     
     var body: some View {
         Text("Bubble")
@@ -38,6 +38,7 @@ struct bubbleSort: View {
             // When sorting is complete, update the UI on the main thread
             DispatchQueue.main.async {
                 self.isSorting = false
+                IsSortedView(randomArray: $randomArray, boolArray: $boolArray, isSorting: $isSorting).isSorted()
             }
         }
     }
