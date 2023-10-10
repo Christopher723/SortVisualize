@@ -16,9 +16,10 @@ struct resetARRAY: View {
     }
     
     func randomizeArray(){
-        isSorting.toggle()
-        isSorting.toggle()
-        randomArray = randomArray.shuffled()
+        if isSorting{
+            isSorting = false}
+        else{
+            randomArray = randomArray.shuffled()}
         
     }
     

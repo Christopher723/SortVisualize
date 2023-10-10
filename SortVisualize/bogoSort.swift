@@ -13,7 +13,6 @@ struct bogoSort: View {
     
     
     
-    
     var body: some View {
         Text("BOGO")
     }

@@ -30,11 +30,15 @@ struct ContentView: View {
                         .onTapGesture {
                             bubbleSort(randomArray: $randomArray,isSorting: $isSorting, boolArray: $boolArray).bubbleSort()
                         }
+                        .disabled(isSorting)
+                    
                     Text("Stop/Randomize")
                         .font(.system(size: 30))
                         .onTapGesture {
                             resetARRAY(randomArray: $randomArray, isSorting: $isSorting).randomizeArray()
                         }
+                    
+                    
                 }
                 Spacer().frame(width: 120)
                 ForEach(randomArray.indices, id: \.self) { index in

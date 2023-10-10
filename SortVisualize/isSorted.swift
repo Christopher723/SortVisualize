@@ -9,7 +9,6 @@ struct IsSortedView: View {
     @Binding var randomArray: [Int]
     @Binding var boolArray: [Bool]
     @Binding var isSorting: Bool
-    
     var trueArray = [true, true, true, true, true, true, true, true, true, true, true, true, true, true, true]
 
     var body: some View {
@@ -17,12 +16,14 @@ struct IsSortedView: View {
     }
 
     func isSorted() {
-        isSorting = false
         let temp = boolArray
-
         // Iterate through the indices of boolArray with a delay
         for i in 0..<14 {
+            if isSorting == false{
+                break
+            }
             DispatchQueue.main.asyncAfter(deadline: .now() + Double(i) * 0.1) {
+                
                 if i > 0 {
                     self.boolArray[i - 1] = false
                 }
@@ -35,6 +36,8 @@ struct IsSortedView: View {
                             self.boolArray = self.trueArray
                             DispatchQueue.main.asyncAfter(deadline: .now() + Double(14) * 0.1) {
                                 self.boolArray = temp
+                                isSorting = false
+                                
                         }
                     }
                 }
@@ -42,6 +45,7 @@ struct IsSortedView: View {
         
         
         }
+        
     }
 }
 

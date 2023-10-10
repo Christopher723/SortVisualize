@@ -25,6 +25,9 @@ struct bubbleSort: View {
                 swapped = false
                 for j in 0..<(self.randomArray.count - 1) {
                     if self.randomArray[j] > self.randomArray[j + 1] {
+                        if isSorting == false{
+                            break
+                        }
                         DispatchQueue.main.async {
                             self.randomArray.swapAt(j, j + 1)
                         }
@@ -37,8 +40,7 @@ struct bubbleSort: View {
             
             // When sorting is complete, update the UI on the main thread
             DispatchQueue.main.async {
-                self.isSorting = false
-                IsSortedView(randomArray: $randomArray, boolArray: $boolArray, isSorting: $isSorting).isSorted()
+                    IsSortedView(randomArray: $randomArray, boolArray: $boolArray, isSorting: $isSorting).isSorted()
             }
         }
     }
