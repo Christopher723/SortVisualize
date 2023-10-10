@@ -24,6 +24,12 @@ struct ContentView: View {
                             bogoSort(randomArray: $randomArray, isSorting: $isSorting).toggleRandomization()
                         }
                         .disabled(isSorting)
+                    Text("Insertion Sort")
+                        .font(.system(size: 50))
+                        .onTapGesture {
+                            insertionSort(randomArray: $randomArray, isSorting: $isSorting, boolArray: $boolArray).insertSort()
+                        }
+                        .disabled(isSorting)
                     
                     Text("Bubble Sort")
                         .font(.system(size: 50))
