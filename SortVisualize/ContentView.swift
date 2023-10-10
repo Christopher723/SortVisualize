@@ -28,6 +28,7 @@ struct ContentView: View {
                         .font(.system(size: 50))
                         .onTapGesture {
                             insertionSort(randomArray: $randomArray, isSorting: $isSorting, boolArray: $boolArray).insertSort()
+                            
                         }
                         .disabled(isSorting)
                     
