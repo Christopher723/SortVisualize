@@ -20,6 +20,7 @@ struct insertionSort: View {
     
     
     func insertSort(){
+        isSorting = true
         DispatchQueue.global(qos: .userInteractive).async {
             var swapped = false
             repeat {
@@ -33,7 +34,7 @@ struct insertionSort: View {
                         j = j - 1
                     }
                     randomArray[j+1] = key
-                    swapped = true
+                    
                     Thread.sleep(forTimeInterval: 0.1)
                 }
             }while swapped
