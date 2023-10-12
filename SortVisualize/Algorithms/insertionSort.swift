@@ -33,6 +33,8 @@ struct insertionSort: View {
                         randomArray[j+1] = randomArray[j]
                         j = j - 1
                     }
+                    
+                    
                     randomArray[j+1] = key
                     
                     Thread.sleep(forTimeInterval: 0.1)

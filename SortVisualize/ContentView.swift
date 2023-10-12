@@ -8,7 +8,7 @@
 import SwiftUI
 
 enum Algorithm: String, CaseIterable, Identifiable {
-    case insertion, bubble, bogo
+    case insertion, bubble, bogo, merge
     var id: Self { self }
 }
 
@@ -30,6 +30,7 @@ struct ContentView: View {
                             Text("Insertion").tag(Algorithm.insertion)
                             Text("Bubble").tag(Algorithm.bubble)
                             Text("Bogo").tag(Algorithm.bogo)
+                            Text("Merge").tag(Algorithm.merge)
                         }.scaleEffect(1.4)
                             .disabled(isSorting)
                         
@@ -45,6 +46,9 @@ struct ContentView: View {
                                 }
                                 if selectedFlavor == .bogo{
                                 bogoSort(randomArray: $randomArray, isSorting: $isSorting).toggleRandomization()}
+                                
+                                if selectedFlavor == .merge{
+                                    mergeSort(randomArray: $randomArray, isSorting: $isSorting, boolArray: $boolArray).mergeSort(arr: &randomArray)}
 
                             }
                     }
