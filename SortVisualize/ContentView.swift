@@ -48,7 +48,8 @@ struct ContentView: View {
                                 bogoSort(randomArray: $randomArray, isSorting: $isSorting).toggleRandomization()}
                                 
                                 if selectedFlavor == .merge{
-                                    mergeSort(randomArray: $randomArray, isSorting: $isSorting, boolArray: $boolArray).mergeSort(arr: &randomArray)}
+                                    mergeSort(randomArray: $randomArray, isSorting: $isSorting, boolArray: $boolArray).mergeSort(arr: &randomArray)
+                                }
 
                             }
                     }

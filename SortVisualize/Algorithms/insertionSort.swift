@@ -37,7 +37,7 @@ struct insertionSort: View {
                     
                     randomArray[j+1] = key
                     
-                    Thread.sleep(forTimeInterval: 0.1)
+                    Thread.sleep(forTimeInterval: 0.05)
                 }
             }while swapped
             
